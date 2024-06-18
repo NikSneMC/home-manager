@@ -63,7 +63,7 @@ let
 
   # Either a `section { foo: "bar"; }` or a `@import/@theme "some-text"`
   configType = with types;
-    (either (attrsOf (either primitive (listOf primitive))) str);
+    (either (attrsOf (either primitive (listOf primitive) attrsOf (either primitive (listOf primitive)))) str);
 
   rasiLiteral = types.submodule {
     options = {
